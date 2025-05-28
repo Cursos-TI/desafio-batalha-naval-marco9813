@@ -17,12 +17,31 @@ int main() {
 
     // Aqui eu defini as posições dos navios na horizontal
     for(int h = 2; h < 5; h++){
-        tabuleiro[2][h + 1] = 3;
+        tabuleiro[3][h + 1] = 3;
     }
 
     // Aqui eu defini as posições dos navios na Vertical
     for(int v = 4; v < 7; v++){
         tabuleiro[v + 1][1] = 3;
+    }
+
+    // Aqui eu defini as posições dos navios na Diagonal da Esquerda para Direita
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){ // aqui o loop vai rodar a matriz e colocar os navios na diagonal linha igual a coluna
+            tabuleiro[0][0] = 3;
+            tabuleiro[1][1] = 3;
+            tabuleiro[2][2] = 3;
+            
+        }
+    }
+
+    // aqui eu defini as posições dos navios na Diagonal da Direita para a Esquerda
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){ // aqui o loop vai rodar a madriz e colocar os navios na diagonal a linha eu comecei com 0 e coluna 9, depois eu fui almentando a linha e diminuindo a coluna
+            tabuleiro[0][9] = 3;
+            tabuleiro[1][8] = 3;
+            tabuleiro[2][7] = 3;
+        }
     }
 
     printf("Jogo Batalha Naval \n");
@@ -35,7 +54,7 @@ int main() {
 
     for(int j = 0; j < 10; j++){
         printf(" \n"); // Aqui ele vai pular a linha para não colidir com o alfabeto
-        printf("%d", j + 1); // Aqui é a numeração que fica no lado esquerdo da matriz que vai de 1 até 10
+        printf("%2d", j + 1); // Aqui é a numeração que fica no lado esquerdo da matriz que vai de 1 até 10
         for(int k = 0; k < 10; k++){
             printf(" %d", tabuleiro[j][k]); // Aqui imprimi todo tabuleiro da batalha naval com os navios definido
    }
